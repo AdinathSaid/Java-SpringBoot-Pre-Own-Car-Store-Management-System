@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<title>Car Registration Form</title>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<!-- Font Awesome -->
+	<script src="https://kit.fontawesome.com/0faddc1af8.js" crossorigin="anonymous"></script>
+	<style>
+		/* Add custom CSS styles here */
+		.container {
+			margin-top: 0px;
+		}
+
+		.form-group {
+			margin-bottom: 15px;
+			/* Adjust this value to decrease the space between fields */
+		}
+
+		h3 {
+			color: antiquewhite;
+		}
+
+		p {
+			color: rgb(0, 0, 64);
+		}
+
+		#logoutButton {
+			background-color: aliceblue;
+			border: none;
+			color: blue;
+			padding: 10px 20px;
+			font-size: 16px;
+			text-align: center;
+			text-decoration: none;
+			cursor: pointer;
+			border-radius: 4px;
+		}
+
+		#logoutButton:hover {
+			background-color: rgb(255, 128, 128);
+			/* Darker red */
+		}
+
+		#parent {
+			display: flex;
+			align-items: center;
+		}
+
+		#carouselExampleDark {
+			margin: auto;
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="/">CARZOO</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="unsoldcar">Cars Available</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="soldcar">Sold History</a>
+					</li>
+				</ul>
+
+				<div>
+					<a class="nav-link" href="registercar">Register New Car</a>
+				</div>
+				<div>
+					<form action="/logout" method="post">
+						<button id="logoutButton" type="submit">Logout</button>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</nav>
+
+	<div id="parent">
+		<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+					aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+					aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+					aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner">
+				<div class="carousel-item active" data-bs-interval="10000">
+					<img src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202301/byd-seal-sixteen_nine.jpg?size=948:533"
+						class="d-block w-100" alt="">
+					<div class="carousel-caption d-none d-md-block">
+						<h3>TESLA</h3>
+						<p>Discover the luxury of owning a pre-owned vehicle without compromising on quality</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/201704/new-2017-creta---exterior_660_040717115414.jpg?size=948:533"
+						class="d-block w-100" alt="...">
+					<div class="carousel-caption d-none d-md-block">
+						<h3>CRETA</h3>
+						<p>Find your perfect match among our hand-picked collection of pre-owned cars</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202306/ezgif-sixteen_nine_514.jpg?size=948:533"
+						class="d-block w-100" alt="...">
+					<div class="carousel-caption d-none d-md-block">
+						<h3>Wide Range Car Collection</h3>
+						<p>From sedans to SUVs, find the pre-owned car that suits your lifestyle and preferences</p>
+					</div>
+				</div>
+
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+				data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+				data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

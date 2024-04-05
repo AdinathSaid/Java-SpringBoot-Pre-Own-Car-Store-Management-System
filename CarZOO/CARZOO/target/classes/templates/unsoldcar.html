@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<title>Car Registration Form</title>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<!-- Font Awesome -->
+	<script src="https://kit.fontawesome.com/0faddc1af8.js" crossorigin="anonymous"></script>
+	<style>
+		/* Add custom CSS styles here */
+		.container {
+			margin-top: 0px;
+		}
+
+		.form-group {
+			margin-bottom: 15px;
+			/* Adjust this value to decrease the space between fields */
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">CARZOO</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="unsoldcar">Cars Available</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="soldcar">Sold History</a>
+					</li>
+				</ul>
+				<div>
+					<a class="nav-link" href="registercar">Register New Car</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div class="container my-5 col-md-8">
+		<div style="display: flex; align-items: center;">
+			<form th:action="@{/unsoldcar}" style="margin-right: 10px;">
+				<input type="text" name="keyword" placeholder="Search here" required>
+				<input type="submit" value="Search">
+			</form>
+			
+			<form id="searchForm" th:action="@{/searchbyprice}" method="POST">
+				<label for="buyprice">Search By Budget:</label>
+				<input type="number" name="buyprice" placeholder="Enter Budget" required>
+				<button type="submit" style="margin-left: 10px;">Search</button>
+			</form>
+			<form id="getallcars" th:action="@{/unsoldcar}" >
+				
+				<button type="submit" style="margin-left: 10px;">All Cars</button>
+			</form>
+		</div>
+
+
+
+
+		<table class="table  table-striped table-hover">
+			<thead>
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Brand</th>
+					<th scope="col">Name</th>
+					<th scope="col">Transmission</th>
+					<th scope="col">Type</th>
+					<th scope="col">Cylinder</th>
+					<th scope="col">Price</th>
+					<th scope="col">Accidental</th>
+					<th scope="col">Year</th>
+					<th scope="col">Mileage</th>
+					<th scope="col">Driven</th>
+					<th scope="col">Number</th>
+					<th scope="col">Color</th>
+					<th scope="col">Insurance</th>
+					<th scope="col">Sell Car</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="c :${unsoldcar}">
+					<td th:text="${c.id}"></td>
+					<td th:text="${c.brand_name}"></td>
+					<td th:text="${c.carname}"></td>
+					<td th:text="${c.transmission}"></td>
+					<td th:text="${c.engine_type}"></td>
+					<td th:text="${c.engine_cylinder}"></td>
+					<td th:text="${c.buyprice}"></td>
+					<td th:text="${c.accidental}"></td>
+					<td th:text="${c.year}"></td>
+					<td th:text="${c.mileage}"></td>
+					<td th:text="${c.driven}"></td>
+					<td th:text="${c.car_number}"></td>
+					<td th:text="${c.color}"></td>
+					<td th:text="${c.car_insurance}"></td>
+					<td><a style="color:blue" th:href="@{/sellcar/{id}(id=${c.id})}"><i
+								class="fa-regular fa-handshake"></i></a></td>
+
+
+
+				</tr>
+
+			</tbody>
+		</table>
+
+
+		<!-- Bootstrap JS -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"></script>
+</body>
+
+</html>
