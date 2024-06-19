@@ -2,7 +2,7 @@ Project: Pre-Own CarStore Management System using SpringBoot,Spring Security,Spr
 
 Functionality:
 1)Admin Authentication using Spring Security
-2)Registeration of Pre own Car.
+2)Registration of Pre own Car.
 3)Display Available cars.
 4)Search functionality for available car(brand name,car name,fuel type,transmission type, car color etc).
 5)Search using Budget of customer(displaying the all available cars under customer budget).
