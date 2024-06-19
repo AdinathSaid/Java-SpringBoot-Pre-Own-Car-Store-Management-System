@@ -18,4 +18,4 @@ To watch project working videos do visit my linkedIn Post:
 3)Receipt Generation Functionality: https://www.linkedin.com/posts/adinathsaid25_springboot-java-j2ee-activity-7182435032991469570-7DZW?utm_source=share&utm_medium=member_desktop
 
 for any help mail me at:
-carzoo2024@gmail.com
+saidadinath04@gmail.com
