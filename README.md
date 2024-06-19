@@ -12,7 +12,7 @@ Functionality:
 9)Sending mail to customer on purchase of car and Sending Mail to Owner of car Store regarding the sold car with profit using SPRINGBOOT Java Mail Sender.
 10)Logout functionality for admin.
 
-To watch video do visit my linkedIn Post:
+To watch project working videos do visit my linkedIn Post:
 1)Basic Functionality: https://www.linkedin.com/posts/adinathsaid25_java-springboot-activity-7179722606399340544-s_Yg?utm_source=share&utm_medium=member_desktop
 2)Email Functionality: https://www.linkedin.com/posts/adinathsaid25_springboot-java-emailintegration-activity-7180615893226250240-LuC9?utm_source=share&utm_medium=member_desktop
 3)Receipt Generation Functionality: https://www.linkedin.com/posts/adinathsaid25_springboot-java-j2ee-activity-7182435032991469570-7DZW?utm_source=share&utm_medium=member_desktop
